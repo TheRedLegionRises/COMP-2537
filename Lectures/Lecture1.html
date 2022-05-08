@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lecture1</title>
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+        }
+
+        article {
+            height: 100%;
+            display: flex;
+            background-color: white;
+            /* flex-wrap: wrap; */
+            /* shorthand way to write it*/
+            flex-flow: row wrap;
+
+            /* Aligns stuff horizontally */
+            /* justify-content: center; */
+            /* values = [flex-start, flex-end, center, space-around, space-between] */
+
+            /* aligns stuff vertically */
+            align-items: center;
+            /* values = [flex-start, flex-end, center] */
+            /* default value is stretch */
+            
+            align-content: flex-start;
+
+
+
+        }
+
+        p {
+            color: black;
+            width: 200px;
+        }
+
+        #p1 {
+            background-color: #a2b9bc;
+            /* determines in which order the paragraphs appear in */
+            /* order: 1 */
+
+            /* Adjusts the paragraph size when the window is adjusted */
+            /* flex-grow: 0; */
+            /* flex-shrink: 1; */
+            /* flex-basis: 4; */
+
+            /* shorthand for all flex */
+            flex: 1 1 200px;
+            /* First int is rate of grow/shrink */
+            /* Second int is which css style (see below) */
+            /* 1=flex-grow, 2=flex-shrink, 3=flex-basis */
+            /* 3rd int states the initial width of the container */
+        }
+
+        #p2 {
+            background-color: #b2ad7f;
+            /* order: 3; */
+            /* flex-grow: 10; */
+            /* flex-shrink: 2; */
+            flex: 1 1 200px;
+
+        }
+
+        #p3 {
+            background-color: #878f99;
+            /* order: 100; */
+            /* flex-grow: 1; */
+            /* flex-shrink: 3; */
+            flex: 1 1 200px;
+
+        }
+
+        @media (max-width: 800px){
+            /* smaller screens */
+            article{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <article>
+        <p id="p1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius id ipsa minima dolores commodi tempora
+            rerum error aut natus porro, assumenda libero suscipit velit quaerat tenetur harum veniam asperiores modi?
+        </p>
+        <p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae fugiat molestias deleniti aliquid
+            error dolorum odio labore temporibus nam officia. Odit incidunt dolores debitis perspiciatis non nisi
+            reiciendis error odio.</p>
+        <p id="p3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusamus modi quis quam neque
+            tempore! Alias consequatur cum id enim officia fugit! Quas omnis, architecto totam repellendus maxime
+            cupiditate aspernatur.</p>
+    </article>
+</body>
+
+</html>
