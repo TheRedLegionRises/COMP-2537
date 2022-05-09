@@ -110,3 +110,8 @@ nav a:hover {
         float: none !important;
     }
 }
+
+footer,
+header {
+    text-align: center;
+}

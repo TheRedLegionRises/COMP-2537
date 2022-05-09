@@ -35,20 +35,6 @@ img {
     border-radius: 5px;
 }
 
-#center {
-    margin: 0 auto;
-    width: 90%;
-}
-
-.clearfix {
-    overflow: hidden;
-}
-
-.clearfix::after {
-    clear: both;
-
-}
-
 nav a {
     display: inline-block;
 
