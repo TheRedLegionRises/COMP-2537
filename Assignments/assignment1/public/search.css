@@ -1,5 +1,6 @@
 body {
     background-color: #ffde00;
+    margin:0px;
 }
 
 main {
@@ -52,4 +53,60 @@ a {
 
 #search1, #search2{
     margin: 5px;
+}
+
+@media screen and (max-width: 400px) {
+
+    main,
+    nav,
+    .images_group {
+        flex-direction: column;
+    }
+
+    .images_group {
+        width: 100% !important;
+    }
+}
+
+nav {
+
+    background-color: #333;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+nav a {
+    display: inline-block;
+
+
+    color: #f2f2f2;
+    text-decoration: none;
+
+    padding: 14px 16px;
+    text-align: center;
+
+}
+
+nav a:hover {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+@media screen and (max-width: 550px) {
+    .image_container {
+        width: 100%;
+        float: none;
+        padding: 10px 0px 10px 0px;
+    }
+
+    #center {
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+        float: none !important;
+    }
 }

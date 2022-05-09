@@ -61,15 +61,16 @@ function processPokemonResp(data) {
 function find_type(type) {
     $("main").empty()
     type_g = type
-    if (type_g == "all"){
+    if (type_g == "all") {
         load_all()
     }
-    else{
-    $.ajax({
-        type: "get",
-        url: `https://pokeapi.co/api/v2/type/`,
-        success: processPokemonResp
-    })}
+    else {
+        $.ajax({
+            type: "get",
+            url: `https://pokeapi.co/api/v2/type/`,
+            success: processPokemonResp
+        })
+    }
 }
 
 async function load_all() {
@@ -115,34 +116,51 @@ async function show_searched_pokemon(data) {
 
 function search_pokemon() {
 
+    button_clicked = $(this)[0].innerHTML;
     nameOrID = $("#searchByNameOrID").val();
 
-    if (nameOrID == ""){
-        load_all();
-    }
+    if (button_clicked == "Search") {
+        if (nameOrID == "") {
+            load_all();
+        }
+
+        else {
+            $.ajax(
+                {
+                    "url": `https://pokeapi.co/api/v2/pokemon/${nameOrID}`,
+                    "type": "GET",
+                    "success": show_searched_pokemon
+                }
+            )
+            display();
+
+        }}
 
     else{
-    $.ajax(
-        {
-            "url": `https://pokeapi.co/api/v2/pokemon/${nameOrID}`,
-            "type": "GET",
-            "success": show_searched_pokemon
-        }
-    )
+        $.ajax(
+            {
+                "url": `https://pokeapi.co/api/v2/pokemon/${button_clicked}`,
+                "type": "GET",
+                "success": show_searched_pokemon
+            }
+        )
+    }}
 
-    display();
-    }
 
+
+function test() {
+    x = $(this)[0].innerHTML;
+    console.log(x);
 }
 
-function display(){
+function display() {
     newHistory = (jQuery("#searchByNameOrID").val())
-    
+
     jQuery("#history").html()
-    jQuery("#history").append("<button class='previousSearch'>" + newHistory + " " + hideButton + "</button>")
+    jQuery("#history").append("<p> <button class='previousSearch'>" + newHistory + " " + hideButton + "</button> </p>")
 }
 
-function hide(){
+function hide() {
     $(this).parent().remove();
 }
 
@@ -155,7 +173,7 @@ function setup() {
     })
     $("body").on("click", "#search", search_pokemon);
     $("body").on("click", ".hide", hide);
-    $("body").on("click", ".previousSearch", hide);
+    $("body").on("click", ".previousSearch", search_pokemon);
 
 }
 
