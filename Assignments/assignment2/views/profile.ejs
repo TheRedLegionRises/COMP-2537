@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            font-size: 24px;
+            background-color: #3b4cca;
+        }
+
+        #picture {
+            float: left;
+            text-align: center;
+            background-image: linear-gradient(red, white);
+            border: 5px solid;
+            height: fit-content;
+            font-style: bold;
+        }
+
+        #info {
+            float: left;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            border: 5px solid black;
+            padding: 20px;
+            background-image: linear-gradient(#b3a125, #ffde00);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="picture">
+        <%= name %>
+            <br>
+            Pokemon ID: <%= id%>
+
+
+                <br>
+
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= id %>.png"
+                    alt="">
+
+                <br>
+                <p>
+                Type: <%= typeList[0] %> <%= typeList[1] %>
+            </p>
+    </div>
+
+    <div id="info">
+        <h3>Stats</h3>
+        <br>
+        HP
+        <progress value="<%= hp %>" max="255">
+            <%= hp %>
+        </progress>
+        Attack
+        <progress value="<%= attack %>" max="255">
+            <%= hp %>
+        </progress>
+        Defense
+        <progress value="<%= defense %>" max="255">
+            <%= hp %>
+        </progress>
+        Special Attack
+        <progress value="<%= specialAttack %>" max="255">
+            <%= hp %>
+        </progress>
+        Special Defense
+        <progress value="<%= specialDefense %>" max="255">
+            <%= hp %>
+        </progress>
+        Speed
+        <progress value="<%= speed %>" max="255">
+            <%= hp %>
+        </progress>
+    </div>
+
+</body>
+
+</html>

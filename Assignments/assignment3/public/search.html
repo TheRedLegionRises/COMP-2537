@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./search.css">
+
+
+    <script src="./search.js"> </script>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Simple Pokemon API Search Site!
+        </h1>
+    </header>
+
+    <nav>
+
+        <div>
+            <a href="index.html">
+                Home Page
+            </a>
+
+            <a href="search.html">
+                Search for Pokemon...
+            </a>
+
+    </nav>
+
+
+    <div id="search1">
+        Search by Type
+        <select name="pokemon_type" id="pokemon_type">
+            <option value="all">All Types</option>
+            <option value="normal"> normal </option>
+            <option value="fighting"> fighting </option>
+            <option value="flying"> flying </option>
+            <option value="poison"> poison </option>
+            <option value="ground"> ground </option>
+            <option value="rock"> rock </option>
+            <option value="bug"> bug </option>
+            <option value="ghost"> ghost </option>
+            <option value="steel"> steel </option>
+            <option value="grass"> grass </option>
+            <option value="fire"> fire </option>
+            <option value="water"> water </option>
+            <option value="grass"> grass </option>
+            <option value="electric"> electric </option>
+            <option value="psychic"> psychic </option>
+            <option value="ice"> ice </option>
+            <option value="dragon"> dragon </option>
+            <option value="dark"> dark </option>
+            <option value="fairy"> fairy </option>
+        </select>
+    </div>
+
+    <div id="search2">
+        Search by Name or ID
+        <input type="text" id="searchByNameOrID">
+        <button id="search">Search</button>
+    </div>
+    <br>
+    <div id="history">Search Bar History</div>
+    <br>
+    <main>
+
+
+    </main>
+    <footer>
+        <h5>
+            Copyright © Jerry's Website 2022
+        </h5>
+    </footer>
+</body>
+
+</html>
